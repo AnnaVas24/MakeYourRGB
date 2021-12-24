@@ -13,21 +13,23 @@ protocol SettingsViewControllerDelegate {
 
 class FirstViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-       
-    }
+   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let navigationVC = segue.destination as? UINavigationController else {return}
-        guard let settingsVC = navigationVC.topViewController as? SettingsViewController else {return}
+        let settingsVC = segue.destination as! SettingsViewController
+        settingsVC.color = view.backgroundColor
         settingsVC.delegate = self
+       
     }
 
 }
 
 extension FirstViewController: SettingsViewControllerDelegate {
     func setBackgroundColor(for viewBackgroundColor: UIColor) {
-        self.view.backgroundColor = viewBackgroundColor
+        view.backgroundColor = viewBackgroundColor
     }
     
 }
+
+
+
+

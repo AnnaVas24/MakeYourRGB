@@ -21,7 +21,7 @@
                     <navigationItem key="navigationItem" id="YRi-Z6-lta">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="square.and.pencil" catalog="system" id="OcR-bc-OzL">
                             <connections>
-                                <segue destination="5Mh-uI-UQ0" kind="presentation" id="9c1-hd-lgP"/>
+                                <segue destination="5Mh-uI-UQ0" kind="presentation" id="WOc-QK-Ng1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -38,7 +38,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i9e-Q4-pCn">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i9e-Q4-pCn">
                                 <rect key="frame" x="30" y="40" width="315" height="156"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -75,48 +75,48 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="kSC-g6-itu">
-                                        <rect key="frame" x="61" y="0.0" width="33.5" height="122"/>
+                                        <rect key="frame" x="61" y="0.0" width="40" height="122"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1RT-Rk-VrG">
-                                                <rect key="frame" x="0.0" y="0.0" width="33.5" height="26.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="26.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bd-Do-qPq">
-                                                <rect key="frame" x="0.0" y="47.5" width="33.5" height="27"/>
+                                                <rect key="frame" x="0.0" y="47.5" width="40" height="27"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ni-Fj-Bce">
-                                                <rect key="frame" x="0.0" y="95.5" width="33.5" height="26.5"/>
+                                                <rect key="frame" x="0.0" y="95.5" width="40" height="26.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="33.5" id="y4A-qX-Nj2"/>
+                                            <constraint firstAttribute="width" constant="40" id="aL4-wH-Nwq"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Hp3-eP-ji7">
-                                        <rect key="frame" x="106.5" y="0.0" width="185.5" height="122"/>
+                                        <rect key="frame" x="113" y="0.0" width="179" height="122"/>
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="NXW-Ar-Udr">
-                                                <rect key="frame" x="-2" y="0.0" width="189.5" height="32.5"/>
+                                                <rect key="frame" x="-2" y="0.0" width="183" height="32.5"/>
                                                 <connections>
                                                     <action selector="redSliderAction" destination="5Mh-uI-UQ0" eventType="valueChanged" id="VF2-cf-C2S"/>
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="v8H-vR-d84">
-                                                <rect key="frame" x="-2" y="45.5" width="189.5" height="32"/>
+                                                <rect key="frame" x="-2" y="45.5" width="183" height="32"/>
                                                 <connections>
                                                     <action selector="greenSliderAction" destination="5Mh-uI-UQ0" eventType="valueChanged" id="WME-FS-pNA"/>
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="XCJ-3e-6w9">
-                                                <rect key="frame" x="-2" y="90.5" width="189.5" height="32.5"/>
+                                                <rect key="frame" x="-2" y="90.5" width="183" height="32.5"/>
                                                 <connections>
                                                     <action selector="blueSliderAction" destination="5Mh-uI-UQ0" eventType="valueChanged" id="aP6-4A-4Cw"/>
                                                 </connections>
