@@ -79,20 +79,22 @@ class SettingsViewController: UIViewController {
 extension SettingsViewController {
     private func setupUI() {
         setupSliders()
-        
-        redSlider.minimumTrackTintColor = .red
-        greenSlider.minimumTrackTintColor = .green
-        blueSlider.minimumTrackTintColor = .blue
-        
+        setupLabels()
+        setupTF()
+    }
+    
+    private func setupLabels() {
         redColorLabel.text = String(format: "%.2f", redSlider.value)
         greenColorLabel.text = String(format: "%.2f", greenSlider.value)
         blueColorLabel.text = String(format: "%.2f", blueSlider.value)
-        
+    }
+    
+    private func setupTF() {
         redColorTF.text = String(format: "%.2f", redSlider.value)
         greenColorTF.text = String(format: "%.2f", greenSlider.value)
         blueColorTF.text = String(format: "%.2f", blueSlider.value)
-        
     }
+    
     private func setupColor() {
         let redSliderValue = CGFloat(redSlider.value)
         let greenSliderValue = CGFloat(greenSlider.value)
@@ -108,9 +110,16 @@ extension SettingsViewController {
     }
     
     private func setupSliders() {
-        redSlider.value = Float(color.rgba.red)
-        greenSlider.value = Float(color.rgba.green)
-        blueSlider.value = Float(color.rgba.blue)
+        
+        let ciColor = CIColor(color: color)
+        
+        redSlider.value = Float(ciColor.red)
+        greenSlider.value = Float(ciColor.green)
+        blueSlider.value = Float(ciColor.blue)
+        
+        redSlider.minimumTrackTintColor = .red
+        greenSlider.minimumTrackTintColor = .green
+        blueSlider.minimumTrackTintColor = .blue
     }
     
     private func showAlert(title: String, message: String) {
@@ -121,19 +130,6 @@ extension SettingsViewController {
         
     }
 }
-
-extension UIColor {
-    var rgba: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {
-        var red: CGFloat = 0
-        var green: CGFloat = 0
-        var blue: CGFloat = 0
-        var alpha: CGFloat = 0
-        getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-
-        return (red, green, blue, alpha)
-    }
-}
-
 extension SettingsViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard let newValue = textField.text else {return}
@@ -148,16 +144,14 @@ extension SettingsViewController: UITextFieldDelegate {
         if textField == redColorTF {
             redColorLabel.text = String(format: "%.2f", floatValue)
             redSlider.value = floatValue
-            setupColor()
         } else if textField == greenColorTF {
             greenColorLabel.text = String(format: "%.2f", floatValue)
             greenSlider.value = floatValue
-            setupColor()
         } else {
             blueColorLabel.text = String(format: "%.2f", floatValue)
             blueSlider.value = floatValue
-            setupColor()
-        }
+           }
+        setupColor()
     }
 }
 
